@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Harmony | A Wish for Peace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #a2d2ff;
+            --deep-blue: #4a90e2;
+            --soft-white: #f8f9fa;
+            --text-color: #2d3436;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation Elements */
+        .bg-circle {
+            position: fixed;
+            border-radius: 50%;
+            background: rgba(162, 210, 255, 0.3);
+            filter: blur(60px);
+            z-index: -1;
+            animation: float 20s infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 50px); }
+        }
+
+        /* Layout Sections */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #636e72;
+            font-weight: 300;
+        }
+
+        .main-container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Quote Section */
+        .quote-box {
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid var(--primary-blue);
+            font-style: italic;
+            font-size: 1.4rem;
+            color: #444;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Interactive Button */
+        .peace-btn {
+            background: var(--deep-blue);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .peace-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(74, 144, 226, 0.4);
+            background: #357abd;
+        }
+
+        .peace-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Floating Symbols Animation */
+        .symbol {
+            position: fixed;
+            bottom: -50px;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 100;
+            animation: rise 4s linear forwards;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #b2bec3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .main-container { padding: 25px; }
+            .quote-box { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Decorative backgrounds -->
+    <div class="bg-circle" style="width: 400px; height: 400px; top: -100px; left: -100px;"></div>
+    <div class="bg-circle" style="width: 300px; height: 300px; bottom: 50px; right: -50px; background: rgba(162, 255, 182, 0.2);"></div>
+
+    <header>
+        <h1>May Peace Prevail on Earth</h1>
+        <p class="subtitle">
+            In a world of diversity, let our common language be kindness. 
+            Beyond borders and beliefs, we are one human family sharing one fragile home.
+        </p>
+    </header>
+
+    <main class="main-container">
+        <div id="quote-display" class="quote-box">
+            "Peace begins with a smile."
+        </div>
+
+        <p style="margin-bottom: 30px; line-height: 1.8;">
+            Every act of compassion, every bridge built, and every hand held in friendship brings us closer to a world without conflict. Today, we send a collective wish to every corner of the globe.
+        </p>
+
+        <button class="peace-btn" onclick="spreadPeace()">Spread Peace & Love</button>
+        
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #95a5a6;">
+            Click to send a virtual wish of harmony to the world.
+        </p>
+    </main>
+
+    <footer>
+        &copy; 2023 | Dedicated to Humanity | Let Love Lead the Way
+    </footer>
+
+    <script>
+        const quotes = [
+            "Peace begins with a smile. — Mother Teresa",
+            "An eye for an eye only ends up making the whole world blind. — Mahatma Gandhi",
+            "When the power of love overcomes the love of power, the world will know peace. — Jimi Hendrix",
+            "Peace is not merely a distant goal that we seek, but a means by which we arrive at that goal. — Martin Luther King Jr.",
+            "If we have no peace, it is because we have forgotten that we belong to each other. — Mother Teresa",
+            "Imagine all the people living life in peace. You may say I'm a dreamer, but I'm not the only one. — John Lennon",
+            "Darkness cannot drive out darkness; only light can do that. — Martin Luther King Jr."
+        ];
+
+        let quoteIndex = 0;
+        const quoteDisplay = document.getElementById('quote-display');
+
+        // Rotate quotes every 5 seconds
+        setInterval(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteDisplay.style.opacity = 0;
+            setTimeout(() => {
+                quoteDisplay.innerText = quotes[quoteIndex];
+                quoteDisplay.style.opacity = 1;
+            }, 500);
+        }, 5000);
+
+        // Interactive Peace Animation
+        function spreadPeace() {
+            const symbols = ['🕊️', '✌️', '🤍', '🌎', '🌸', '✨'];
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const symbol = document.createElement('div');
+                    symbol.className = 'symbol';
+                    symbol.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                    
+                    // Random horizontal position
+                    symbol.style.left = Math.random() * 100 + 'vw';
+                    
+                    // Random size
+                    symbol.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    
+                    // Random duration
+                    const duration = Math.random() * 3 + 2;
+                    symbol.style.animationDuration = duration + 's';
+                    
+                    document.body.appendChild(symbol);
+                    
+                    // Remove element after animation ends
+                    setTimeout(() => {
+                        symbol.remove();
+                    }, duration * 1000);
+                }, i * 100);
+            }
+        }
+
+        // Initial fade in for the quote
+        quoteDisplay.style.transition = 'opacity 0.8s ease';
+    </script>
+</body>
+</html>
